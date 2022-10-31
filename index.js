@@ -23,7 +23,7 @@ const server = http.createServer((req, res) => {
 
     if (req?.url?.toLowerCase() !== "/api/me") throw CustomError.badRequest("Not found");
 
-    res.statusCode = 300;
+    res.statusCode = 200;
     res.setHeader("Content-Type", "application/json");
     res.end(
       JSON.stringify({
