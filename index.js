@@ -65,13 +65,11 @@ function handleArithmetic(req, res) {
       throw CustomError.badRequest("Operation type not supported");
   }
 
-  res.end(
-    JSON.stringify({
-      slackUsername: "oseunabiola",
-      operation_type: req.body.operation_type.toUpperCase(),
-      result,
-    })
-  );
+  res.status(200).json({
+    slackUsername: "oseunabiola",
+    operation_type: req.body.operation_type,
+    result,
+  });
 }
 
 function handleMe(req, res) {
